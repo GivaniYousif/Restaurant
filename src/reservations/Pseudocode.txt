@@ -1,0 +1,57 @@
+
+Restaurant Waiting List
+
+
+LinkedList.java
+Customer.java
+Restaurant.java
+QueueInterface.java
+
+RestaurantForm
+
+/*
+Input name & party size
+Button to add it to waiting list
+Wait time randomly generated from 1-30 minutes
+Display total wait times and average wait times
+Show # of parties ahead of user
+Display all information
+*/
+
+    int Highest = 0;
+    int Wait = 0;
+    private static int totalWaitTime = 0;
+
+btnAddPartyActionPerformed
+
+Random rand = new Random();
+
+        int sizeOfQueue = (queue.size()) + 1; // used to calculate the average waiting time
+        
+        int waitTime = rand.nextInt(30) + 1; // random waiting time between 1 and 30
+
+        totalWaitTime += waitTime; // adds up all waiting times to be used to calculate average
+
+        int partySize = Integer.parseInt(txtSize.getText());
+        
+        int average = totalWaitTime/sizeOfQueue; // calculates average waiting time for all parties
+
+        txtTotalWaitTimes.setText(String.valueOf(totalWaitTime + " minutes."));
+        txtAvgWaitTime.setText(String.valueOf("The average waiting time is currently " + average + " minutes."));
+        txtNumberOfParties.setText(String.valueOf("There are currently " + sizeOfQueue + " parties ahead of you."));
+
+        String result = " Name: " + partyName + "      Party Size: " + partySize + "      Wait Time: " + waitTime + " minutes.";
+
+        queue.enqueue(result);
+        Wait++;
+
+btnDisplay
+
+ String result;
+        int i;
+        int size = queue.size();
+        for (i = 0; i < size; i++) {
+            result = (String) queue.dequeue();
+            lstWaitingList.add(result);
+
+// end form
